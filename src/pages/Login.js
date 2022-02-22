@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = () => {
   const classes = useStyles();
-  const [username, setUsername] = useState('')//useState('markooo11')
+  const [email, setEmail] = useState('')//useState('markooo11')
   const [password, setPassword] = useState('')//useState('pass')
   const { jwt, setJwt } = useContext(MainContext)
   const [showAlert, setShowAlert] = useState(false)
@@ -69,8 +69,8 @@ const Login = () => {
 
   const handleChange = (event) => {
     switch (event.target.name) {
-      case 'username':
-        setUsername(event.target.value)
+      case 'email':
+        setEmail(event.target.value)
         break;
       case 'password':
         setPassword(event.target.value)
@@ -83,7 +83,7 @@ const Login = () => {
     event.preventDefault();
     try {
       const user = {
-        username,
+        email,
         password
       }
       const response = await AuthService.login(user)
@@ -117,11 +117,11 @@ const Login = () => {
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="Username"
-            name="username"
-            value={username}
-            autoComplete="username"
+            id="email"
+            label="Email"
+            name="email"
+            value={email}
+            autoComplete="email"
             autoFocus
             onChange={(e) => handleChange(e)}
           />
