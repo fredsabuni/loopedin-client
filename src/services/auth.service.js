@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Local URL: http:localhost:3001 
-const API_URL = 'https://loopedin-server.herokuapp.com/api/v1/';
+// Local URL: http://localhost:3001 
+const API_URL = 'https://loopedin-server.herokuapp.com/api/v1/'; 
 
 const AuthService = {
   signup(credentials) {
